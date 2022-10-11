@@ -1,0 +1,35 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH -n 24
+#SBATCH --mail-type="END,FAIL"
+#SBATCH --mem=200G
+#SBATCH -t 48:00:00
+#SBATCH -p ram256g
+#SBATCH -A mcvetano
+
+set -v
+ulimit -n
+ulimit -n 10000
+
+cd $SLURM_SUBMIT_DIR
+
+PROJ=P7833
+FQDIR=Cvetanovic_Project_014
+SM=7833
+
+# only run once
+/home/itn/shared/software/cellranger-5.0.1/cellranger mkref \
+    --genome=m38_h38ATXN1 \
+    --fasta=mouse_hATXN1.fa \
+        --genes=mouse_hATXN1.gtf
+
+/home/itn/shared/software/cellranger-5.0.1/cellranger count \
+    --id=$PROJ \
+    --transcriptome=m38_h38ATXN1 \
+    --fastqs=$FQDIR \
+    --sample=$SM \
+    --expect-cells=5000 \
+    --localcores=24 \
+    --nosecondary \
+    --include-introns \
+    --localmem=200
