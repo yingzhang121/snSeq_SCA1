@@ -1,5 +1,5 @@
 source("pipeline.r")
-counts <- read_10x("P7644/outs/filtered_feature_bc_matrix")
+counts <- read_10x("P7644/outs/raw_feature_bc_matrix")
 sn7644 <- diem_to_score(counts, min.count=3000)
 
 # Manual check the result to decide threshold for data cleaning
