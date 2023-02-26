@@ -12,7 +12,7 @@ Outline of Data Analysis:
    
 2. Cell Typing:  
    The cleaned count matrix was imported into Seurat for dimension deduction and clustering analysis. At the same time, an independent cell typing was done by SingleR algorithm using DropViz Cerebellum meta cell reference.  
-   So the final cell groups include 1) cells grouped into the same Seurat cluster and 2) cells with the same SingleR annotation tag.
+   So the final cell types are defined as 1) cells grouped into the same Seurat cluster and 2) cells with the same SingleR annotation tag.
    
 
 3. Differential Gene Expression (DGE):  
