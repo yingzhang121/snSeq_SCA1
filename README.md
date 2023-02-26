@@ -16,7 +16,7 @@ Outline of Data Analysis:
    
 
 3. Differential Gene Expression (DGE):  
-   It is still arguable for the best way to run differential gene expression using single-cell/necleus datasets. We decided to use the scran (normalization) - limma_tread (testing for DE) given the following publications:  
+   It is still arguable for what would be the best way to run differential gene expression using single-cell/necleus datasets. We decided to use the scran (normalization) - limma_tread (testing for DE) given the following publications:  
    1. [A systematic evaluation of single cell RNA-seq analysis pipelines](https://www.nature.com/articles/s41467-019-12266-7) 
       - [Statistics or biology: the zero-inflation controversy about scRNA-seq data](https://pubmed.ncbi.nlm.nih.gov/35063006/)
    2. [Reproducibility of Methods to Detect Differentially Expressed Genes from Single-Cell RNA Sequencing](https://www.frontiersin.org/articles/10.3389/fgene.2019.01331/full#h4)
